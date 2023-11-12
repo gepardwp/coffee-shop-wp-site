@@ -3,10 +3,12 @@
  * Template Name: Landing Page
  *
  * @package OceanWP WordPress theme
- */ ?>
+ */
+
+?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
+<html class="<?php echo esc_attr( oceanwp_html_classes() ); ?>" <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -15,11 +17,15 @@
 	</head>
 
 	<!-- Begin Body -->
-	<body <?php body_class(); ?><?php oceanwp_schema_markup( 'body' ); ?>>
+	<body <?php body_class(); ?> <?php oceanwp_schema_markup( 'html' ); ?>>
+
+		<?php wp_body_open(); ?>
 
 		<?php do_action( 'ocean_before_outer_wrap' ); ?>
 
 		<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="#main"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-header-skip-link', false ) ); ?></a>
 
 			<?php do_action( 'ocean_before_wrap' ); ?>
 
@@ -27,7 +33,7 @@
 
 				<?php do_action( 'ocean_before_main' ); ?>
 
-				<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?>>
+				<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?> role="main">
 
 					<?php do_action( 'ocean_before_content_wrap' ); ?>
 
@@ -43,7 +49,10 @@
 
 								<?php do_action( 'ocean_before_content_inner' ); ?>
 
-								<?php while ( have_posts() ) : the_post(); ?>
+								<?php
+								while ( have_posts() ) :
+									the_post();
+									?>
 
 									<div class="entry-content entry clr">
 										<?php the_content(); ?>
@@ -65,13 +74,13 @@
 
 					<?php do_action( 'ocean_after_content_wrap' ); ?>
 
-		        </main><!-- #main-content -->
+				</main><!-- #main-content -->
 
-		        <?php do_action( 'ocean_after_main' ); ?>
-		                
-		    </div><!-- #wrap -->
+				<?php do_action( 'ocean_after_main' ); ?>
 
-		    <?php do_action( 'ocean_after_wrap' ); ?>
+			</div><!-- #wrap -->
+
+			<?php do_action( 'ocean_after_wrap' ); ?>
 
 		</div><!-- .outer-wrap -->
 

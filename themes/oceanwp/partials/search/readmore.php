@@ -5,17 +5,14 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Text
-$text = esc_html__( 'Continue Reading', 'oceanwp' );
-
-// Apply filters for child theming
-$text = apply_filters( 'ocean_search_readmore_link_text', $text ); ?>
+?>
 
 <div class="search-entry-readmore clr">
-    <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( $text ); ?>"><?php echo esc_html( $text ); ?></a>
+	<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-continue-reading', false ) ); ?>"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-search-continue-reading', false ) ); ?></a>
+	<span class="screen-reader-text"><?php the_title(); ?></span>
 </div><!-- .search-entry-readmore -->

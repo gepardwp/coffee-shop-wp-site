@@ -16,7 +16,6 @@ Woo Wishlist
   transition: all 0.25s ease-in-out;
   z-index: 10;
 }
-
 .products .product:hover .tinv-wraper.tinv-wishlist {
   visibility: visible;
   -moz-opacity: 1;
@@ -37,7 +36,7 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
   margin-top: 0;
 }
 
-.tinv-wishlist table input[type="checkbox"] {
+.tinv-wishlist table input[type=checkbox] {
   margin-right: 0 !important;
 }
 
@@ -47,4 +46,9 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
 
 a.wishlist_products_counter.top_wishlist-heart-plus:before, a.wishlist_products_counter.top_wishlist-heart:before {
   margin-right: 2px;
+}
+
+/* YITH WooCommerce Wishlist ______________>> OceanWP */
+.woo-wishlist-link span.count {
+  margin-left: 5px;
 }

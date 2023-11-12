@@ -60,11 +60,29 @@ Woo Quick View
 	i {
 		display: inline-block;
 	    font-size: 16px;
-	    font-weight: 600;
-	    margin-right: 6px;
+	    font-weight: 400;
+	    margin-right: 9px;
 	    line-height: 1;
 	    vertical-align: middle;
-	    margin-top: -3px;
+	    margin-top: -4px;
+	}
+
+}
+
+.woo-entry-image {
+	.owp-quick-view{
+		.owp-icon {
+			margin-right: 9px;
+			line-height: 1;
+			margin-top: -4px;
+			use {
+				stroke: #fff;
+
+				&:hover {
+					stroke: #fff;
+				}
+			}
+		}
 	}
 }
 
@@ -226,8 +244,6 @@ Woo Quick View
 			    display: inline-block;
 				font: normal normal 900 30px/1 'Font Awesome 5 free';
 			    text-rendering: auto;
-			    -webkit-font-smoothing: antialiased;
-			    -moz-osx-font-smoothing: grayscale;
 		    }
 
 		    &.flex-prev {

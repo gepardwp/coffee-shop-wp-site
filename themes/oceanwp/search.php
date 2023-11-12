@@ -19,11 +19,21 @@ get_header(); ?>
 
 			<div id="content" class="site-content clr">
 
+				<?php
+				$logo_search = get_theme_mod( 'ocean_search_logo' );
+				if ( ! empty( $logo_search ) ) {
+					?>
+					<img class="logo-search" src="<?php echo esc_url( $logo_search ); ?>" alt="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" />
+				<?php } ?>
+			
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post(); ?>
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
 
 							<?php get_template_part( 'partials/search/layout' ); ?>
 
@@ -34,8 +44,9 @@ get_header(); ?>
 				<?php else : ?>
 
 					<?php
-					// Display no post found notice
-					get_template_part( 'partials/none' ); ?>
+					// Display no post found notice.
+					get_template_part( 'partials/none' );
+					?>
 
 				<?php endif; ?>
 

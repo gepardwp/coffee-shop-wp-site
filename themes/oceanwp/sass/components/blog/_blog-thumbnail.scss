@@ -114,13 +114,19 @@
 		a:hover {
 			color: #333;
 		}
+
+		svg.owp-icon {
+			width: 17px;
+			height: 17px;
+			margin-right: 0.7rem;
+		}
 	}
 
 	.blog-entry-date {
 		float: right;
 	}
 
-	&.no-featured-image {
+	&.format-standard.no-featured-image {
 		.blog-entry-content {
 			width: 100%;
 		}
